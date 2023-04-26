@@ -6,10 +6,10 @@ const { promisify } = require('util')
 const readFile = promisify(fs.readFile)
 const GPT_MODE = process.env.GPT_MODE
 
-let file_context = "debes actuar de la siguiente manera:"
+let file_context = "Eres shina el chatbot de chinonoob."
 
 const messages = [
-  {role: "system", content: "debes actuar de la siguiente manera:"}
+  {role: "system", content: "Eres shina el chatbot de chinonoob."}
 ];
 
 console.log("GPT_MODE is " + GPT_MODE)
@@ -74,7 +74,7 @@ app.get('/gpt/:text', async (req, res) => {
       const response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: messages,
-        temperature: 2,
+        temperature: 3,
         max_tokens: 128,
         top_p: 1,
         frequency_penalty: 0,
